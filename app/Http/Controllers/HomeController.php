@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Expense;
 use App\ExpenseCategory;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -27,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $cats = ExpenseCategory::whereHas('expenses', function($query) use ($user) {
+        $cats = ExpenseCategory::whereHas('expenses', function($query) {
             $query->where('user_id', $user->id);
         })->get();
         return view('dashboard.index', compact('cats'));
@@ -36,16 +34,14 @@ class HomeController extends Controller
     public function getStats()
     {
         $user = Auth::user();
-        $labels = array();
-        $data = array();
-        $cats = ExpenseCategory::whereHas('expenses', function($query) use ($user) {
+        $cats = ExpenseCategory::whereHas('expenses', function($query) {
             $query->where('user_id', $user->id);
         })->get();
         foreach($cats as $cat) {
             $labels[] = $cat->display_name;
             $data[] = $cat->expenses()->where('user_id', $user->id)->sum('amount');
         }
-        
+
         return response()
                     ->json([
                         'labels'    =>  $labels,

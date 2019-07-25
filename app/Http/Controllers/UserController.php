@@ -21,8 +21,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate(10);
-        $roles = Role::all();
-        return view('user_management.users.index', compact('users', 'roles'));
+        return view('user_management.users.index', compact('users'));
     }
 
     public function changePassword(ChangePasswordRequest $request)

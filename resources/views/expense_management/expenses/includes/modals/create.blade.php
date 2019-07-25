@@ -1,4 +1,4 @@
-<form id="createExpense" action="{{ route('expenses.store') }}" method="POST">
+<form id="createExpense" method="POST">
     <div class="modal fade" id="createExpenseModal" tabindex="-1" role="dialog" aria-labelledby="createExpenseModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

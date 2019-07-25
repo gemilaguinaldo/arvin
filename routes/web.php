@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('/getdata', 'HomeController@getStats')->name('get.data');
 
 Route::middleware(['auth'])->group(function(){
     Route::post('/changepassword', 'UserController@changePassword')->name('user.changepassword');
@@ -31,7 +30,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('expenses/categories', 'ExpenseCategoryController')->except([
         'create', 'edit'
     ]);
-    Route::resource('expenses', 'ExpenseController')->except([
+    Route::resource('expensxes', 'ExpenseController')->except([
         'create', 'edit'
     ]);
 });

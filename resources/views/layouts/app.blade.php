@@ -22,7 +22,7 @@
         @guest()
 
         @else
-            @include('layouts.includes.sidebar')
+            @include('layouts.includes.sideabar')
         @endguest
         <div id="content-wrapper" class="d-flex flex-column" style="padding-top:0;">
             <!-- Main Content -->

@@ -60,18 +60,6 @@ Expense Management > Expenses
         });
     });
 
-    $('.updateExpense').on('click', function() {
-        var id = $(this).data('id');
-        var expense_category_id = $(this).data('expense_category_id');
-        var amount = $(this).data('amount');
-        var entry_date = $(this).data('entry_date');
-        $('#updateExpenseModal').modal('show');
-        $('#updateExpense').attr('action', '/expenses/' + id);
-        $('input#amount').val(amount);
-        $('input#entry_date').val(entry_date);
-        $('select[name=expense_category_id] option[value=' + expense_category_id + ']').prop('selected', true);
-    });
-
     $('.createExpense').on('click', function() {
         $('#createExpenseModal').modal('show');
     });

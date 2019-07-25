@@ -19,6 +19,7 @@ class AddDefaultData extends Migration
             'display_name'      =>  'admin',
             'is_admin'          =>  true
         ]);
+
         $userRole = Role::updateOrCreate([
             'display_name'      =>  'user',
         ]);
@@ -27,7 +28,6 @@ class AddDefaultData extends Migration
             'name'      =>  'arvin',
             'email'     =>  'vin.shelby@gmail.com',
             'password'  =>  bcrypt('password'),
-            'role_id'   =>  $adminRole->id,
         ]);
     }
 

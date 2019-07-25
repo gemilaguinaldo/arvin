@@ -9,7 +9,6 @@
             </button>
         </div>
         <div class="modal-body">
-                {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name" class="col-form-label">Name:</label>
                     <input type="text" name="name" class="form-control" id="create_user_name" value=""></input>
@@ -29,9 +28,6 @@
                 <div class="form-group">
                     <label for="password_confirmation" class="col-form-label">Role:</label>
                     <select name="role_id" id="create_user_role" class="form-control">
-                        @foreach($roles as $role)
-                            <option value="{{ $role->id }}">{{ $role->display_name }}</option>
-                        @endforeach
                     </select>
                 </div>
         </div>

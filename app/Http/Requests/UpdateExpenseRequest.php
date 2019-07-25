@@ -25,7 +25,6 @@ class UpdateExpenseRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount'                =>  'required|numeric',
             'expense_category_id'   =>  'required',
             'entry_date'            =>  'required'
         ];

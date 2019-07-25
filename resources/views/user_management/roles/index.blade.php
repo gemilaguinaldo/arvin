@@ -66,9 +66,9 @@ User Management > Roles
         $('input#display_name').val(display_name);
         $('textarea#description').val(description);
         if(isadmin == 1) {
-            $('input#is_admin').prop( "checked", true );    
+            $('input#is_admin').prop( "checked", true );
         } else {
-            $('input#is_admin').prop( "checked", false );    
+            $('input#is_admin').prop( "checked", false );
         }
     });
 
